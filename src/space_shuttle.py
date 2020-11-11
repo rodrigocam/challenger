@@ -1,11 +1,18 @@
 import pyxel
+import pymunk
+
 from sprites import Sprite
 
 class SpaceShuttle:
 
-    def __init__(self, sprites):
+    def __init__(self, position, sprites):
         self.sprites = sprites
         self.current_sprite = 0
+
+        #pymunk
+        self.body = pymunk.Body(1, 1666)
+        self.shape = pymunk.Poly.create_box(self.body)
+        self.body.position = position
 
 
     def update(self):
@@ -13,7 +20,7 @@ class SpaceShuttle:
 
 
     def draw(self):
-        self.sprite.draw()
+        self.sprite.draw(self.body.position)
 
     @property
     def sprite(self):
@@ -26,4 +33,4 @@ SPRITES = [
 ]
 
 
-SPACE_SHUTTLE = SpaceShuttle(SPRITES)
+SPACE_SHUTTLE = SpaceShuttle((20, 20), SPRITES)

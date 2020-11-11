@@ -1,19 +1,23 @@
 import pyxel
+import pymunk
 
-from space_shuttle import SPACE_SHUTTLE
-
+import space_shuttle
 
 FPS_CAP = 60
 TITLE = "Challenger"
 WINDOW_WIDTH = 64 * 4
 WINDOW_HEIGHT = 64 * 3
 
+SPACE = pymunk.Space()
+SPACE.gravity = 0, 100
+SPACE.add(space_shuttle.SPACE_SHUTTLE.body, space_shuttle.SPACE_SHUTTLE.shape)
 
 def update():
-    pass
+    SPACE.step(0.02)
 
 def draw():
-    SPACE_SHUTTLE.draw()
+    pyxel.cls(pyxel.COLOR_BLACK)
+    space_shuttle.SPACE_SHUTTLE.draw()
     # map_x, map_y = (0, 0)
     # map_page = 0
     # tile_x, tile_y = (0, 8)

@@ -11,5 +11,5 @@ class Sprite:
         self.bg_color = bg_color
 
 
-    def draw(self):
-        pyxel.blt(20, 20, self.page, self.start[0], self.start[1], self.size[0], self.size[1], self.bg_color)
+    def draw(self, pos):
+        pyxel.blt(*pos, self.page, self.start[0], self.start[1], self.size[0], self.size[1], self.bg_color)
