@@ -1,2 +1,2 @@
 # challenger
-Launch a space shooter, if you can!
+Launch a space shuttle, if you can!
