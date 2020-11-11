@@ -1,6 +1,7 @@
 import pyxel
 import pymunk
 
+import constants
 from sprites import Sprite
 
 class SpaceShuttle:
@@ -32,5 +33,6 @@ SPRITES = [
     Sprite(0, start=(24, 0), size=(15, 39), bg_color=pyxel.COLOR_PINK),
 ]
 
+CENTER = ((constants.WINDOW_WIDTH / 2) - 15, constants.WINDOW_HEIGHT - 40)
 
-SPACE_SHUTTLE = SpaceShuttle((20, 20), SPRITES)
+SPACE_SHUTTLE = SpaceShuttle(CENTER, SPRITES)

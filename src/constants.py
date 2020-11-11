@@ -1,0 +1,4 @@
+FPS_CAP = 60
+TITLE = "Challenger"
+WINDOW_WIDTH = 64 * 4
+WINDOW_HEIGHT = 64 * 3
